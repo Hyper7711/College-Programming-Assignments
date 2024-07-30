@@ -13,7 +13,7 @@ int add(int a, int b) {
     Calculator::incrementCount();
     return a + b;
 }
-ṇṇ
+
 int subtract(int a, int b) {
     Calculator::incrementCount();
     return a - b;
