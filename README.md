@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Hyper7711
 - 👀 I’m interested in understanding new code of diffrent languages
-- 🌱 I’m currently learning python basics
-- 💞️ I’m looking to collaborate on DS.A
+- 🌱 I’m currently learning c++,graphics
+- 💞️ I’m looking to collaborate on python projects
 - 📫 How to reach me ...linkedin- Yash Shinde
 - ⚡ Fun fact: ...i m also a dance choregrapher,love playing chess
 
