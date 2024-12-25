@@ -39,19 +39,18 @@ public:
     void deleteByValue();
     void deleteAtEnd();
     int computeTotal();
-    void sortList();
+    void sortList(); // Placeholder if you want to implement sorting later
     void concatList(list &q1);
     void displayRev(node *t);
     bool reverseDisplay();
 };
 
-// Recursive function to display list in reverse order
 void list::displayRev(node *t)
 {
     if (t == nullptr)
         return;
     displayRev(t->next);
-    cout << "\nPRN NO:" << t->prn << " Name: " << t->name;
+    cout << "\nPRN NO: " << t->prn << " Name: " << t->name;
 }
 
 void list::create()
@@ -192,7 +191,6 @@ void list::deleteByValue()
 
     if (prev == nullptr)
     {
-        // First node
         start = t->next;
     }
     else
@@ -267,4 +265,69 @@ bool list::reverseDisplay()
     return true;
 }
 
-// Main function remains the same
+// Main function
+int main()
+{
+    list club1, club2;
+    int choice;
+
+    do
+    {
+        cout << "\n=============== Pinnacle Club Menu ===============";
+        cout << "\n1. Create List\n2. Display List\n3. Insert at Beginning\n4. Insert at End\n5. Insert After";
+        cout << "\n6. Delete at First\n7. Delete by Value\n8. Delete at End\n9. Compute Total Members";
+        cout << "\n10. Reverse Display\n11. Concatenate Lists\n12. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            club1.create();
+            break;
+        case 2:
+            club1.display();
+            break;
+        case 3:
+            club1.insertAtBeginning();
+            break;
+        case 4:
+            club1.insertAtEnd();
+            break;
+        case 5:
+            club1.insertAfter();
+            break;
+        case 6:
+            club1.deleteAtFirst();
+            break;
+        case 7:
+            club1.deleteByValue();
+            break;
+        case 8:
+            club1.deleteAtEnd();
+            break;
+        case 9:
+            cout << "\nTotal Members: " << club1.computeTotal();
+            break;
+        case 10:
+            if (!club1.reverseDisplay())
+            {
+                cout << "\nList is Empty.";
+            }
+            break;
+        case 11:
+            cout << "\nCreating another list to concatenate.";
+            club2.create();
+            club1.concatList(club2);
+            cout << "\nLists concatenated successfully.";
+            break;
+        case 12:
+            cout << "\nExiting program.";
+            break;
+        default:
+            cout << "\nInvalid choice. Try again.";
+        }
+    } while (choice != 12);
+
+    return 0;
+}
