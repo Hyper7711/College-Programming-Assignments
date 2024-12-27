@@ -51,3 +51,23 @@ public:
     void displayrev(node * t); // To display from end-st
     bool reverseDisplay();
 };
+
+void list::create()
+{
+    int no;
+    string nam;
+    if (start == nullptr)
+    {
+        cout << "Enter the PRN Number:";
+        cin >> no;
+        cout << "Enter Name:";
+        cin.ignore();
+        getline(cin, nam);
+        start = new node(no, nam);
+        cout << "\n++++++++++++ LIST CREATED ++++++++++++++";
+    }
+    else
+    {
+        cout << "\nLIST IS ALREADY CREATED"
+    }
+}
