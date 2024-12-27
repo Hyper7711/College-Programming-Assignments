@@ -30,22 +30,24 @@ public:
         start = nullptr;
     }
 
-    void create();
+    // CREATING MEMBER FUNCTIONS
+
+    void create(); // TO create and display
     void display();
 
-    void insertatbeg();
+    void insertatbeg(); // To insert values
     void insertatend();
     void insertafter();
 
-    void deleteatfirst();
+    void deleteatfirst(); // To delete values
     void deleteatend();
     void deleteatend();
 
     void sortlist(); // later sorting
 
-    int computeTotal();
+    int computeTotal(); // To get total
     void concatlist(list & q1);
 
-    void displayrev(node * t);
+    void displayrev(node * t); // To display from end-st
     bool reverseDisplay();
 };
