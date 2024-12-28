@@ -2,8 +2,7 @@
 #include <string>
 using namespace std;
 
-class List;
-
+class list;
 class node
 {
     int prn; // attributes
@@ -20,12 +19,12 @@ public:
     friend class list; // TO access private mem of node
 };
 
-class list;
+class list
 {
     node *start;
 
 public:
-    list() :
+    list()
     {
         start = nullptr;
     }
@@ -41,14 +40,14 @@ public:
 
     void deleteatfirst(); // To delete values
     void deleteatend();
-    void deleteatend();
+    void deletebyvalue();
 
     void sortlist(); // later sorting
 
     int computeTotal(); // To get total
-    void concatlist(list & q1);
+    void concatlist(list &q1);
 
-    void displayrev(node * t); // To display from end-st
+    void displayrev(node *t); // To display from end-st
     bool reverseDisplay();
 };
 
@@ -68,6 +67,22 @@ void list::create()
     }
     else
     {
-        cout << "\nLIST IS ALREADY CREATED"
+        cout << "\nLIST IS ALREADY CREATED";
+    }
+}
+
+void list::display()
+{
+    node *t = start;
+    if (start == nullptr)
+    {
+        cout << "\nLIST IS EMPTY";
+        return;
+    }
+    cout << "\n++++++++++ LIST ++++++++++\n";
+    while (t != nullptr)
+    {
+        cout << t->prn << " " << t->name << "\n";
+        t = t->next;
     }
 }
