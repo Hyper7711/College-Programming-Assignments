@@ -86,3 +86,23 @@ void list::display()
         t = t->next;
     }
 }
+
+void list::insertatbeg()
+{
+    int no;
+    string nam;
+    if (start == nullptr)
+    {
+        create();
+        return;
+    }
+    cout << "\nEnter PRN Number: ";
+    cin >> no;
+    cout << "Enter Name: ";
+    cin.ignore();
+    getline(cin, nam);
+    node *temp = new node(no, nam);
+    temp->next = start;
+    start = temp;
+    cout << "Inserted " << temp->name << " at the beginning.";
+}
