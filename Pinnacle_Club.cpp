@@ -118,16 +118,16 @@ void list::insertatend()
 }
 cout << "\nEnter PRN Number: ";
 cin >> no;
-cout << "Enter Name; ";
+cout << "Enter Name: ";
 cin.ignore();
 getline(cin, nam);
 node *temp = new node(no, nam);
 node *t = start;
-while (t->next =! nullptr)
+while (t->next != nullptr)
 {
-    t = t*next
+    t = t->next;
 }
-temp->next = temp;
-cout << "Inserted" << temp->name << "at the end.";
+t->next = temp;
+cout << "Inserted " << temp->name << "at the end.";
 }
     
