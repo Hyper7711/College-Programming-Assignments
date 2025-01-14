@@ -106,3 +106,28 @@ void list::insertatbeg()
     start = temp;
     cout << "Inserted " << temp->name << " at the beginning.";
 }
+
+void list::insertatend()
+{
+    int no;
+    string nam;
+    if (start == nullptr)
+{
+    create();
+    return;
+}
+cout << "\nEnter PRN Number: ";
+cin >> no;
+cout << "Enter Name; ";
+cin.ignore();
+getline(cin, nam);
+node *temp = new node(no, nam);
+node *t = start;
+while (t->next =! nullptr)
+{
+    t = t*next
+}
+temp->next = temp;
+cout << "Inserted" << temp->name << "at the end.";
+}
+    
