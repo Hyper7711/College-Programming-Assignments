@@ -16,7 +16,7 @@ public:
         next = nullptr;
         name = nm;
     }
-    friend class list; // TO access private mem of node
+    friend class list; // To access private members of node
 };
 
 class list
@@ -30,8 +30,7 @@ public:
     }
 
     // CREATING MEMBER FUNCTIONS
-
-    void create(); // TO create and display
+    void create(); // To create and display
     void display();
 
     void insertatbeg(); // To insert values
@@ -42,12 +41,12 @@ public:
     void deleteatend();
     void deletebyvalue();
 
-    void sortlist(); // later sorting
+    void sortlist(); // Later sorting
 
     int computeTotal(); // To get total
     void concatlist(list &q1);
 
-    void displayrev(node *t); // To display from end-st
+    void displayrev(node *t); // To display from end
     bool reverseDisplay();
 };
 
@@ -125,7 +124,7 @@ void list::insertatend()
     node *t = start;
     while (t->next != nullptr)
     {
-        t = t->next
+        t = t->next;
     }
     t->next = temp;
     cout << "Inserted " << temp->name << " at the end.";
@@ -138,29 +137,30 @@ void list::insertafter()
     if (start == nullptr)
     {
         cout << "\nThe list is empty.";
+        return;
     }
-    cout << "\nInsert the PRN Number after which to insert";
+    cout << "\nInsert the PRN Number after which to insert: ";
     cin >> key;
-    cout << "\nEnter PRN Number";
+    cout << "Enter PRN Number: ";
     cin >> no;
-    cout << "\n Enter Name";
+    cout << "Enter Name: ";
     cin.ignore();
     getline(cin, nam);
     node *temp = new node(no, nam);
     node *t = start;
-    while (t->next != nullptr)
+    while (t != nullptr && t->prn != key)
     {
-        t = t->next
+        t = t->next;
     }
-    if (t = nullptr)
+    if (t == nullptr)
     {
-        cout << "\nPRN Number" << key << "\n not found.";
+        cout << "\nPRN Number " << key << " not found.";
         delete temp;
     }
     else
     {
         temp->next = t->next;
         t->next = temp;
-        cout << "\nInserted" << temp->next << "after PRN" << key << ".";
+        cout << "Inserted " << temp->name << " after PRN " << key << ".";
     }
 }
