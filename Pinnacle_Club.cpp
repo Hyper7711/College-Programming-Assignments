@@ -164,3 +164,40 @@ void list::insertafter()
         cout << "Inserted " << temp->name << " after PRN " << key << ".";
     }
 }
+
+void list::deleteatfirst()
+{
+    if (start == nullptr)
+    {
+        cout << "\nList is empty, nothing to delete.";
+        return;
+    }
+    node *temp = start;
+    start = start->next;
+    cout << "Deleted " << temp->name << " from the beginning.";
+    delete temp;
+}
+
+void list::deleteatend()
+{
+    if (start == nullptr)
+    {
+        cout << "\nList is empty, nothing to delete.";
+        return;
+    }
+    if (start->next == nullptr)
+    {
+        delete start;
+        start = nullptr;
+        cout << "\nDeleted last node, list is now empty.";
+        return;
+    }
+    node *t = start;
+    while (t->next->next != nullptr)
+    {
+        t = t->next;
+    }
+    delete t->next;
+    t->next = nullptr;
+    cout << "\nDeleted last node.";
+}
