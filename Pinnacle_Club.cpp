@@ -201,3 +201,39 @@ void list::deleteatend()
     t->next = nullptr;
     cout << "\nDeleted last node.";
 }
+
+void list::deletebyvalue()
+{
+    if (start == nullptr)
+    {
+        cout << "\nList is empty, nothing to delete.";
+        return;
+    }
+    int key;
+    cout << "\nEnter PRN Number to delete: ";
+    cin >> key;
+
+    if (start->prn == key)
+    {
+        deleteatfirst();
+        return;
+    }
+
+    node *t = start, *prev = nullptr;
+    while (t != nullptr && t->prn != key)
+    {
+        prev = t;
+        t = t->next;
+    }
+
+    if (t == nullptr)
+    {
+        cout << "\nPRN Number " << key << " not found.";
+    }
+    else
+    {
+        prev->next = t->next;
+        delete t;
+        cout << "\nDeleted node with PRN " << key << ".";
+    }
+}
