@@ -237,3 +237,32 @@ void list::deletebyvalue()
         cout << "\nDeleted node with PRN " << key << ".";
     }
 }
+
+void list::sortlist()
+{
+    if (start == nullptr || start->next == nullptr)
+    {
+        cout << "\nlist is too sort to sort.";
+        return;
+    }
+    node *i, *j;
+    int tempPrn;
+    string tempName;
+
+    for (i = start; i->next != nullptr, i = i->next)
+    {
+        for (j = i->next; j != nullptr; i != i->next)
+        {
+            if (i->prn > j->prn)
+            {
+                tempPrn = i->prn;
+                tempName = i->name;
+                i->prn = j->prn;
+                i->name = j->name;
+                j->prn = tempPrn;
+                j->name = tempName;
+            }
+        }
+    }
+    cout << "\nList sorted successfully.";
+}
