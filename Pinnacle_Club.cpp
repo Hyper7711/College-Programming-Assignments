@@ -249,7 +249,7 @@ void list::sortlist()
     int tempPrn;
     string tempName;
 
-    for (i = start; i->next != nullptr, i = i->next)
+    for (i = start; i->next != nullptr; i = i->next)
     {
         for (j = i->next; j != nullptr; i != i->next)
         {
@@ -265,4 +265,52 @@ void list::sortlist()
         }
     }
     cout << "\nList sorted successfully.";
+}
+
+int list::computeTotal()
+{
+    int count = 0;
+    node *t = start;
+    while (t != nullptr)
+    {
+        count++;
+        t = t->next;
+    }
+    return count;
+}
+
+void list::concatlist(list &q1)
+{
+    if (start == nullptr)
+    {
+        start = q1.start;
+        return;
+    }
+    node *t = start;
+    while (t->next != nullptr)
+    {
+        t = t->next;
+    }
+    t->next = q1.start;
+    cout << "\nLists concatenated successfully.";
+}
+
+void list::displayrev(node *t)
+{
+    if (t == nullptr)
+        return;
+    displayrev(t->next);
+    cout << t->prn << " " << t->name << "\n";
+}
+
+bool list::reverseDisplay()
+{
+    if (start == nullptr)
+    {
+        cout << "\nList is empty.";
+        return false;
+    }
+    cout << "\nReversed List:\n";
+    displayrev(start);
+    return true;
 }
