@@ -321,7 +321,7 @@ int main()
     int choice;
     do
     {
-        cout << "\n1. Create Loist\n.Display List\n3.Insert at Beginning\n4.Inseert at End\n5. Insert After a PRN\n6.Delete Fisrt\n7. Delete Last\n8. Delete by value\n9.Sort List\n10. Compute Total\n11. Conncatnate List\n12. Reverse Display\n!3. Exit";
+        cout << "\n1. Create List\n2.Display List\n3.Insert at Beginning\n4.Inseert at End\n5. Insert After a PRN\n6.Delete Fisrt\n7. Delete Last\n8. Delete by value\n9.Sort List\n10. Compute Total\n11. Conncatnate List\n12. Reverse Display\n!3. Exit";
         cout << "\nEnter your choice: ";
         cin >> choice;
 
