@@ -322,62 +322,57 @@ int main()
     do
     {
         cout << "\n1. Create Loist\n.Display List\n3.Insert at Beginning\n4.Inseert at End\n5. Insert After a PRN\n6.Delete Fisrt\n7. Delete Last\n8. Delete by value\n9.Sort List\n10. Compute Total\n11. Conncatnate List\n12. Reverse Display\n!3. Exit";
-        cout << "\n1."
-    }
-}
+        cout << "\nEnter your choice: ";
+        cin >> choice;
 
-cout << "\nEnter your choice: ";
-cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            l1.create();
+            break;
+        case 2:
+            l1.display();
+            break;
+        case 3:
+            l1.insertatbeg();
+            break;
+        case 4:
+            l1.insertatend();
+            break;
+        case 5:
+            l1.insertafter();
+            break;
+        case 6:
+            l1.deleteatfirst();
+            break;
+        case 7:
+            l1.deleteatend();
+            break;
+        case 8:
+            l1.deletebyvalue();
+            break;
+        case 9:
+            l1.sortlist();
+            break;
+        case 10:
+            cout << "\nTotal is: " << l1.computeTotal();
+            break;
+        case 11:
+            cout << "\nCreating another list for CONCATNATION";
+            l2.create();
+            l2.insertatend();
+            l1.concatlist(l2);
+            break;
+        case 12:
+            l1.reverseDisplay();
+            break;
+        case 13:
+            cout << "\n..........Exiting...........";
+            break;
 
-switch (choice)
-{
-case 1:
-    l1.create();
-    break;
-case 2:
-    l1.display();
-    break;
-case 3:
-    l1.insertatbeg();
-    break;
-case 4:
-    l1.insertatend();
-    break;
-case 5:
-    l1.insertafter();
-    break;
-case 6:
-    l1.deleteatfirst();
-    break;
-case 7:
-    l1.deleteatend();
-    break;
-case 8:
-    l1.deletebyvalue();
-    break;
-case 9:
-    l1.sortlist();
-    break;
-case 10:
-    cout << "\nTotal Nodes: " << l1.computeTotal();
-    break;
-case 11:
-    cout << "\nCreating another list for concatenation";
-    l2.create();
-    l2.insertatend();
-    l1.concatlist(l2);
-    break;
-case 12:
-    l1.reverseDisplay();
-    break;
-case 13:
-    cout << "\nExiting...";
-    break;
-default:
-    cout << "\nInvalid choice! Try again.";
-}
-}
-while (choice != 13)
-    ;
-return 0;
+        default:
+            cout << "\nINVALID CHOICE TRY AGAIN.!! ";
+        }
+    } while (choice != 13);
+    return 0;
 }
