@@ -242,7 +242,7 @@ void list::sortlist()
 {
     if (start == nullptr || start->next == nullptr)
     {
-        cout << "\nlist is too sort to sort.";
+        cout << "\nList is too short to sort.";
         return;
     }
     node *i, *j;
@@ -251,7 +251,7 @@ void list::sortlist()
 
     for (i = start; i->next != nullptr; i = i->next)
     {
-        for (j = i->next; j != nullptr; i != i->next)
+        for (j = i->next; j != nullptr; j = j->next) // Corrected the loop condition
         {
             if (i->prn > j->prn)
             {
